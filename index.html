@@ -1,0 +1,157 @@
+<!--
+	PRUB3
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NFT web experiment</title>
+    <meta name="description" content="galletitas, paz y buenm rollo. つづく" />
+    <meta charset="utf-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/cryptomierdas/img/middle_finger.ico" />
+    <link rel="stylesheet" href="/cryptomierdas/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://npmcdn.com/moralis@0.0.6/dist/moralis.js"></script>
+
+</head>
+<body>
+    
+<!--
+	1) AUTHENTICATE WITH METAMASK
+	2) ADD USER TO DB
+	3) ADD MORE DATA TO THE USER PROFILE
+-->
+
+	<button onclick="login()">Login with Metamask</button>
+
+	<script>
+		Moralis.initialize("VTxTJJMWSVX2oEELsE4FIvMFeNn5qaJ411EiYrAt"); // Application id from moralis.io
+		Moralis.serverURL = "https://an4jqat5ktvz.moralis.io:2053/server"; //Server url from moralis.io
+	
+		async function login(){
+			console.log("login clicked");
+			var user = await Moralis.Web3.authenticate();
+			if(user){
+				console.log(user);
+				user.set("nickname","VITALIK");
+				user.set("fav_color","blue");
+				user.save();
+			}
+		}
+	
+	</script>
+
+
+
+  
+  
+</html>
+
+    <div class="container">
+        <div class="box2"></div>
+        <div class="box1""></div>
+        <div class="box3"></div>
+        <h1>bla</h1>
+        <h1>bla</h1>
+        <h1>bla</h1>
+        <div class="pixelart-to-css"></div>
+    </div>
+
+<div class="container landing-page donate">
+      
+    <footer class="footer">
+  <div class="footer__addr">
+    <h1 class="footer__logo">Something</h1>
+        
+    <h2>Contact</h2>
+    
+    <address>
+      5534 Somewhere In. The World 22193-10212<br>
+          
+      <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+    </address>
+  </div>
+  
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">Media</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Online</a>
+        </li>
+
+        <li>
+          <a href="#">Print</a>
+        </li>
+            
+        <li>
+          <a href="#">Alternative Ads</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item nav__item--extra">
+      <h2 class="nav__title">Technology</h2>
+      
+      <ul class="nav__ul nav__ul--extra">
+        <li>
+          <a href="#">Hardware Design</a>
+        </li>
+        
+        <li>
+          <a href="#">Software Design</a>
+        </li>
+        
+        <li>
+          <a href="#">Digital Signage</a>
+        </li>
+        
+        <li>
+          <a href="#">Automation</a>
+        </li>
+        
+        <li>
+          <a href="#">Artificial Intelligence</a>
+        </li>
+        
+        <li>
+          <a href="#">IoT</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item">
+      <h2 class="nav__title">Legal</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        
+        <li>
+          <a href="#">Terms of Use</a>
+        </li>
+        
+        <li>
+          <a href="#">Sitemap</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
+  <div class="legal">
+    <p>&copy; 2019 Something. All rights reserved.</p>
+    
+    <div class="legal__links">
+      <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
