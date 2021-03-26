@@ -1,138 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>NFT web experiment</title>
-    <meta name="description" content="galletitas, paz y buenm rollo. つづく" />
-    <meta charset="utf-8" />
-    <meta name="robots" content="index,follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/cryptomierdas/img/middle_finger.ico" />
-    <link rel="stylesheet" href="/cryptomierdas/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
-
-    <script src="https://npmcdn.com/moralis@0.0.6/dist/moralis.js"></script>
+    <link rel="stylesheet" href="/cryptomierdas/style.css" />
   </head>
   <body>
-    <!-- Login email with Moralis JS -->
+    <header class="app-header">
+      <span class="title">Moralis Profiles</span>
+      <div id="app-header-btns"></div>
+    </header>
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Cryptomierdas</h1>
-      </div>
-    </div>
-    <div class="container">
-      <input id="email_imput" type"email">
-      <button id="login_button">Login with Metamask</button>
-    </div>
+    <section id="content" class="container"></section>
 
-    <!--
-	1) AUTHENTICATE WITH METAMASK
-	2) ADD USER TO DB
-	3) ADD MORE DATA TO THE USER PROFILE
--->
-
-    <script>
-      Moralis.initialize("VTxTJJMWSVX2oEELsE4FIvMFeNn5qaJ411EiYrAt"); // Application id from moralis.io
-      Moralis.serverURL = "https://an4jqat5ktvz.moralis.io:2053/server"; //Server url from moralis.io
-
-      async function login() {
-        console.log("login clicked");
-        var user = await Moralis.Web3.authenticate();
-        if (user) {
-          console.log(user);
-          user.set("nickname", "VITALIK");
-          user.set("fav_color", "blue");
-          user.save();
-        }
-      }
-    </script>
-
-    <!-- Contenedor de tarjetas NFTs 
-
-   <div class="container" >
-  <nft-card contractAddress="0xe628ef7988227e58ff93d9898706aa106aa5608c" tokenId="31600060895"> 
-    </nft-card> <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
-  </div> 
-
-    <div class="container landing-page donate">
-      
-    <footer class="footer">
-  <div class="footer__addr">
-    <h1 class="footer__logo">Cryptomierdas</h1>
-        
-    <h2>Contact</h2>
-    
-    <address>
-      Vivimos en la ether net<br> 
-      <a class="footer__btn" href="https://discord.gg/ASwwdd24pp"></a>
-    </address>
-  </div>
-  
-  <ul class="footer__nav">
-    <li class="nav__item">
-      <h2 class="nav__title">Media</h2>
-
-      <ul class="nav__ul">
-        <li>
-          <a href="#">Discord</a>
-        </li>
-        
-      </ul>
-    </li>
-    
-    <li class="nav__item nav__item--extra">
-      <h2 class="nav__title">Autores</h2>
-      
-      <ul class="nav__ul nav__ul--extra">
-        <li>
-          <a href="#">Steve Aoki</a>
-        </li>
-        
-        <li>
-          <a href="#">Justin Roland</a>
-        </li>
-        
-        <li>
-          <a href="#">Olive Allen</a>
-        </li>
-        
-        <li>
-          <a href="#">Antoni Tudisco</a>
-        </li>
-       
-      </ul>
-    </li>
-    
-    <li class="nav__item">
-      <h2 class="nav__title">Legal</h2>
-      
-      <ul class="nav__ul">
-        <li>
-          <a href="#">Privacy Policy</a>
-        </li>
-        
-        <li>
-          <a href="#">Terms of Use</a>
-        </li>
-        
-      </ul>
-    </li>
-  </ul>
-  
-  <div class="legal">
-    <p>creative commons 2021 Cryptomierdas.</p>
-    
-    <div class="legal__links">
-      <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
-    </div>
-  </div>
-</footer>
--->
+    <!-- scripts -->
+    <script src="index.js"></script>
   </body>
 </html>
