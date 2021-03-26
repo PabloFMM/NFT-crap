@@ -14,18 +14,19 @@ body {
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  font-size: 14px;
-  background-color: #f4f4f4;
+  font-size: 8px;
+  background-color: #c8e2f1;
   align-items: start;
   min-height: 100vh;
 }
 
 .container {
-  background: cadetblue;
+  background: rgb(150, 216, 255);
   width: 80%;
   height: 80%;
   margin: auto;
   position: relative;
+  border-radius: 0.4rem;
 }
 
 button {
@@ -34,8 +35,8 @@ button {
   right: 1.6rem;
   bot: 1.6rem;
   padding: 0.8rem 0.8rem;
-  background: rgb(246, 133, 27);
-  border: 0.3rem dotted solid rgb(182, 96, 16);
+  background: #5190ee;
+  border: 0.3rem dotted solid  #5b51ee);
   color: whitesmoke;
   font-size: 1.1rem;
   border-radius: 0.4rem;

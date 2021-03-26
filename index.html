@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>NFT web experiment</title>
     <meta name="description" content="galletitas, paz y buenm rollo. つづく" />
     <meta charset="utf-8" />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/cryptomierdas/img/middle_finger.ico" />
-    <link rel="stylesheet" href="/cryptomierdas/style.css">
+    <link rel="stylesheet" href="/cryptomierdas/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+
     <script src="https://npmcdn.com/moralis@0.0.6/dist/moralis.js"></script>
+  </head>
+  <body>
+    <!-- Login email with Moralis JS -->
 
-</head>
-<body>
-    
-  <div>
-  <nft-card contractAddress="0xe628ef7988227e58ff93d9898706aa106aa5608c" tokenId="31600060895"> 
-    </nft-card> <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
-  </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Cryptomierdas</h1>
+      </div>
+    </div>
+    <div class="container">
+      <input id="email_imput" type"email">
+      <button id="login_button">Login with Metamask</button>
+    </div>
 
-  <div>
-    <nft-card contractAddress="0x2af6eb2bfda21572615708532602454e5413bda1" tokenId="13300020007">
-    </nft-card><script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
-  </div>
-
-  <div>
-    <nft-card contractAddress="0x495f947276749ce646f68ac8c248420045cb7b5e" tokenId="20612267565504031743644319089603227724630784476077671446955783540963765387265">
-    </nft-card><script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
-
-  </div>
-
-  <!--
+    <!--
 	1) AUTHENTICATE WITH METAMASK
 	2) ADD USER TO DB
 	3) ADD MORE DATA TO THE USER PROFILE
 -->
 
-  <button onclick="login()">Login with Metamask</button>
+    <script>
+      Moralis.initialize("VTxTJJMWSVX2oEELsE4FIvMFeNn5qaJ411EiYrAt"); // Application id from moralis.io
+      Moralis.serverURL = "https://an4jqat5ktvz.moralis.io:2053/server"; //Server url from moralis.io
 
-	<script>
-		Moralis.initialize("VTxTJJMWSVX2oEELsE4FIvMFeNn5qaJ411EiYrAt"); // Application id from moralis.io
-		Moralis.serverURL = "https://an4jqat5ktvz.moralis.io:2053/server"; //Server url from moralis.io
-	
-		async function login(){
-			console.log("login clicked");
-			var user = await Moralis.Web3.authenticate();
-			if(user){
-				console.log(user);
-				user.set("nickname","VITALIK");
-				user.set("fav_color","blue");
-				user.save();
-			}
-		}
-	
-	</script>
+      async function login() {
+        console.log("login clicked");
+        var user = await Moralis.Web3.authenticate();
+        if (user) {
+          console.log(user);
+          user.set("nickname", "VITALIK");
+          user.set("fav_color", "blue");
+          user.save();
+        }
+      }
+    </script>
+
+    <!-- Contenedor de tarjetas NFTs 
+
+   <div class="container" >
+  <nft-card contractAddress="0xe628ef7988227e58ff93d9898706aa106aa5608c" tokenId="31600060895"> 
+    </nft-card> <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
+  </div> 
 
     <div class="container landing-page donate">
       
@@ -129,5 +133,6 @@
     </div>
   </div>
 </footer>
-
-</body>
+-->
+  </body>
+</html>
