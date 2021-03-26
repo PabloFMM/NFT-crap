@@ -1,5 +1,5 @@
-Moralis.initialize("FWtPLO0en5imI3ChWwEsGobOrqJTkcUk4KEpP8Ab"); // APP ID
-Moralis.serverURL = "https://yi63fzkqbi8t.moralis.io:2053/server";
+Moralis.initialize("VTxTJJMWSVX2oEELsE4FIvMFeNn5qaJ411EiYrAt"); // APP ID
+Moralis.serverURL = "https://an4jqat5ktvz.moralis.io:2053/server";
 
 const appHeaderContainer = document.getElementById("app-header-btns");
 const contentContainer = document.getElementById("content");
