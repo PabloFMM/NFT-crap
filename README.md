@@ -4,6 +4,9 @@ Gracias Ruth
 Hola mundo
 
 # SetUp 
-- Instalacion del Visual studio Code https://azure.microsoft.com/es-es/products/visual-studio-code/
-- Instalacion del entorno propuesta Tier 1 https://git-scm.com/downloads
-- Configurar Git
+- Instalacion del Visual Studio Code https://azure.microsoft.com/es-es/products/visual-studio-code/
+- Instalacion Git https://git-scm.com/downloads (revisar opciones por defecto)
+- Crear cuenta en Github
+- Configurar extensiones Git en Visual Studio Code
+- Clonar repositorio en Visual Studio Code
+    * View \ Command Palette \ Git: Clone \ Pegar URL repositorio Github
