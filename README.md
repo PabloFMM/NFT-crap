@@ -10,7 +10,9 @@ Hola mundo
     * Prueba
     * Configurar usuario Github  $ git config --global user.name "Usuario"
     * Configurar email Github    $ git config --global user.email ejemplo@ejemplo.com
+    * Prueba Dani
 - Configurar extensiones Git en Visual Studio Code
 - Clonar repositorio en Visual Studio Code
     * View \ Command Palette \ Git: Clone \ Pegar URL repositorio Github
     * Prueba
+- Prueba Dani
