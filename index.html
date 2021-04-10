@@ -18,13 +18,21 @@
 
     <section id="content" class="container"></section>
  
+    <!-- Incluimos un NFT de la red de pruebas -->
     <div class="container">
-    <nft-card
-    contractAddress="0x495f947276749ce646f68ac8c248420045cb7b5e"
-    tokenId="20612267565504031743644319089603227724630784476077671446955783537665230503937"
-    referrerAddress="0x4f2b438e02abcaa832872f896ad4497c0ca81b6c">
-    </nft-card>
-    <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
+      <nft-card contractAddress="0x3c990b4b572f45cfe93c648cb7fef0ed52d5c5c3"
+                tokenId="1555" 
+                network="rinkeby"
+                referrerAddress="0x4f2b438e02abcaa832872f896ad4497c0ca81b6c">
+      </nft-card> 
+      <!--  otro nft de pruebas
+      <nft-card contractAddress="0xee45b41d1ac24e9a620169994deb22739f64f231"
+          tokenId="35809155707462472471268871861053712151230243022988286973223905359217274388481"
+          network="rinkeby"
+          referrerAddress="0x4f2b438e02abcaa832872f896ad4497c0ca81b6c">
+      </nft-card>
+      -->
+      <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
     </div>
    
     <!-- scripts -->
