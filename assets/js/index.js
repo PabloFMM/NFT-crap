@@ -11,6 +11,7 @@ async function logOut() {
 }
 
 async function loginWithMetaMask() {
+
   let user = Moralis.User.current();
   if (!user) {
     user = await Moralis.Web3.authenticate();
@@ -21,6 +22,7 @@ async function loginWithMetaMask() {
 }
 
 async function loginWithEmail(isSignUp) {
+
   const email = document.getElementById("email").value;
   const pass = document.getElementById("pass").value;
 
@@ -36,6 +38,7 @@ async function loginWithEmail(isSignUp) {
       const user = new Moralis.User();
       user.set("username", email);
       user.set("password", pass);
+      user.set("email", email); // dgp
 
       await user.signUp();
     } else {
@@ -112,14 +115,17 @@ async function onUnlinkAddress(event) {
 }
 
 function renderHeader() {
+
   const user = Moralis.User.current();
   if (!user) {
     return;
   }
   // show the logout, refresh buttons if user logged in
-  appHeaderContainer.innerHTML = `
-      <button id="btn-logout">Logout</button>
-    `;
+  // appHeaderContainer.innerHTML = `
+  //    <button id="btn-logout">Logout</button>
+  //  `; // dgp
+  document.getElementById("btn-logout").style.visibility = 'visible'; // dgp
+  document.getElementById("btn-login").style.visibility = 'hidden'; // dgp
   document.getElementById("btn-logout").onclick = logOut;
 }
 
@@ -149,7 +155,9 @@ function buildLoginComponent(isSignUp = false) {
 }
 
 function renderLogin(isSignUp) {
-  contentContainer.innerHTML = buildLoginComponent(isSignUp);
+
+  //contentContainer.innerHTML = buildLoginComponent(isSignUp); // dgp
+  isSignUp = false; // dgp
   document.getElementById("btn-login-metamask").onclick = loginWithMetaMask;
   document.getElementById("btn-login-email").onclick = function () {
     loginWithEmail(isSignUp);
@@ -230,6 +238,7 @@ function buildAddrListComponent(user) {
 }
 
 function renderProfile(user) {
+
   contentContainer.innerHTML = buildProfileComponent(user);
   document.getElementById("btn-profile-set-pass").onclick = onSetPassword;
   document.getElementById("btn-profile-save").onclick = onSaveProfile;
@@ -341,6 +350,7 @@ async function onSaveProfile(event) {
 }
 
 function render() {
+
   const user = Moralis.User.current();
   renderHeader();
   if (user) {
@@ -351,9 +361,14 @@ function render() {
 }
 
 function init() {
+
+  document.getElementById("btn-logout").style.visibility = 'hidden'; // dgp
+  document.getElementById("btn-login").style.visibility = 'visible'; // dgp
   listenForAccountChange();
 
   // render on page load
   render();
 }
 init();
+
+document.getElementById("btn-login").onclick= renderLogin(false)

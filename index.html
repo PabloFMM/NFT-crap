@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="All the information about NFT, marketplaces, creators, drops, events">
-    <meta name="author" content="NFT Craps">
-    <title>NFT Craps</title>
+    <meta name="author" content="NFT Crap">
+    <title>NFT Crap</title>
 
         <!-- Preloader -->
         <style>
@@ -122,9 +122,14 @@
                     </li>
                 </ul>
                 <!-- Button -->
-                <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="login.html">
+                <a id="btn-login" class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" data-toggle="modal" data-target="#typeLoginModal">
+                <!-- <a id="btn-login" class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="login.html">-->
                     Login
                 </a>
+                <a id="btn-logout" class="navbar-btn btn btn-sm btn-neutral d-none d-lg-inline-block ml-3" href="">
+                    Logout
+                </a> 
+                <!-- btn btn-neutral btn-icon d-none d-lg-inline-block-->
                 <!-- Mobile button -->
                 <div class="d-lg-none text-center">
                     <a href="" class="btn btn-block btn-sm btn-warning">See more details</a>
@@ -132,6 +137,88 @@
             </div>
         </div>
     </nav>
+
+
+
+
+
+    <!-- Type of login Modal -->
+    <div class="modal fade docs-example-modal-sm" id="typeLoginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h6 class="modal-title" id="loginModalLabel">Choose your login</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                    <button id="btn-login-metamask" type="button" class="btn btn-block btn-soft-warning" data-dismiss="modal">Metamask</button>
+                    </div>
+                    <div class="row"></div>
+                    <div class="row">
+                    <button type="button" class="btn btn-block btn-soft-dark" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Email</button>
+                    </div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Email login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-control-label">Email address</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i data-feather="user"></i></span>
+                                </div>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group mb-0">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <label class="form-control-label">Password</label>
+                                </div>
+                                <div class="mb-2">
+                                    <a href="#" class="small text-muted text-underline--dashed border-primary" data-toggle="password-text" data-target="#pass">Show password</a>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i data-feather="key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" id="pass" placeholder="Password">
+                            </div>
+                        </div>
+                        <!--
+                        <div class="mt-4">
+                            <button id="btn-login-email" type="button" class="btn btn-block btn-primary">Login email</button></div>
+                        <div class="mt-4">
+                                <button id="btn-login-metamask" type="button" class="btn btn-block btn-primary">Login Metamask</button></div>
+                        -->
+                        </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="btn-login-email" type="button" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Main content -->
     <section class="slice py-7">
         <div class="container">
@@ -200,6 +287,8 @@
         </div>
     </footer>   
     <!-- scripts -->
-    <script src="index.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
