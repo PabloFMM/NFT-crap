@@ -59,7 +59,7 @@
     
     <!-- Moralis -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <!-- Favicon -->
     <link rel="icon" href="assets/img/nii.png" type="image/png">
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -104,182 +104,25 @@
             <!-- Collapse -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="">Overview</a>
-                    </li>
                     <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secciones</a>
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
                         <div class="dropdown-menu dropdown-menu-single">
-                            <a href="" class="dropdown-item">Marketplaces</a>
-                            <a href="" class="dropdown-item">Drops</a>
-                            <a href="" class="dropdown-item">Top creators</a>
-                            <a href="" class="dropdown-item">Events</a>
-                            <a href="" class="dropdown-item">Newbies info</a>
+                            <a href="https://discord.gg/ASwwdd24pp" class="dropdown-item">Discord</a>
                         </div>
                     </li>
+                    <!--
                     <li class="nav-item ">
-                        <a class="nav-link" href="">Who we are</a>
+                        <a class="nav-link" href="">Community</a>
                     </li>
+                    -->
                 </ul>
                 <!-- Button -->
-                <a id="btn-login" class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" data-toggle="modal" data-target="#typeLoginModal" href="">
-                    Login
-                </a>
-                <a id="btn-logout" class="navbar-btn btn btn-sm btn-neutral d-none d-lg-inline-block ml-3" href="">
-                    Logout
-                </a> 
-                <!-- Mobile button -->
-                <!--
-                <div class="d-lg-none text-center">
-                    <a href="" class="btn btn-block btn-sm btn-warning">See more details</a>
-                </div>
-                -->
+                <!--<a id="btn-login" class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" data-toggle="modal" data-target="#typeLoginModal" href="">login</a>-->
+                <button id="btn-login" type="button" class="navbar-btn btn btn-primary btn-sm">Connect wallet</button>
+                <button id="btn-logout" type="button" class="navbar-btn btn btn-neutral btn-sm">Logout</button>
             </div>
         </div>
     </nav>
-
-
-
-
-
-    <!-- Type of login Modal -->
-    <div class="modal fade docs-example-modal-sm" id="typeLoginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h6 class="modal-title" id="loginModalLabel">Choose your login</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                    <button id="btn-login-metamask" type="button" class="btn btn-block btn-soft-warning" data-dismiss="modal">Metamask</button>
-                    </div>
-                    <div class="row"></div>
-                    <div class="row">
-                    <button type="button" class="btn btn-block btn-soft-dark" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Email</button>
-                    </div>
-                </div>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Email login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label class="form-control-label">Email address</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i data-feather="user"></i></span>
-                                </div>
-                                <input type="email" class="form-control" id="emailLogin" placeholder="name@example.com">
-                            </div>
-                        </div>
-                        <div class="form-group mb-0">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div>
-                                    <label class="form-control-label">Password</label>
-                                </div>
-                                <div class="mb-2">
-                                    <a href="#" class="small text-muted text-underline--dashed border-primary" data-toggle="password-text" data-target="#pass">Show password</a>
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i data-feather="key"></i></span>
-                                </div>
-                                <input type="password" class="form-control" id="passLogin" placeholder="Password">
-                            </div>
-                        </div>
-                        <div class="card-footer px-md-5"><small>Not registered?</small>
-                            <a href="register.html" class="small font-weight-bold" data-dismiss="modal" data-toggle="modal" data-target="#signupModal">Create account</a>
-                        </div>
-                        <!--
-                        <div class="mt-4">
-                            <button id="btn-login-email" type="button" class="btn btn-block btn-primary">Login email</button></div>
-                        <div class="mt-4">
-                                <button id="btn-login-metamask" type="button" class="btn btn-block btn-primary">Login Metamask</button></div>
-                        -->
-                        </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="btn-login-email" type="button" class="btn btn-primary">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Signup Modal -->
-    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Email sign up</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label class="form-control-label">Email address</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i data-feather="user"></i></span>
-                                </div>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                            </div>
-                        </div>
-                        <div class="form-group mb-0">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div>
-                                    <label class="form-control-label">Password</label>
-                                </div>
-                                <div class="mb-2">
-                                    <a href="#" class="small text-muted text-underline--dashed border-primary" data-toggle="password-text" data-target="#pass">Show password</a>
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i data-feather="key"></i></span>
-                                </div>
-                                <input type="password" class="form-control" id="pass" placeholder="Password">
-                            </div>
-                        </div>
-                        <!--
-                        <div class="mt-4">
-                            <button id="btn-login-email" type="button" class="btn btn-block btn-primary">Login email</button></div>
-                        <div class="mt-4">
-                                <button id="btn-login-metamask" type="button" class="btn btn-block btn-primary">Login Metamask</button></div>
-                        -->
-                        </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="btn-login-email-signup" type="button" class="btn btn-primary" data-dismiss="modal" >Signup</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
 
     <!-- Main content -->
@@ -287,10 +130,14 @@
         <div class="container">
             <div class="row row-grid align-items-center">
                 <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                    <!-- Image -->
+                    <!-- Image 
                     <figure class="w-100">
                         <img alt="Image placeholder" src="" class="img-fluid mw-md-120">
                     </figure>
+                    -->
+                    <nft-card contractAddress="0xa3aee8bce55beea1951ef834b99f3ac60d1abeeb" tokenId="2193"> 
+                    </nft-card> 
+                    <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
                 </div>
                 <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
                     <!-- Heading -->
@@ -303,7 +150,7 @@
                     </p>
                     <!-- Buttons -->
                     <div class="text-center text-md-left mt-5">
-                        <a href="" class="btn btn-primary btn-icon" target="_blank">
+                        <a href="https://discord.gg/ASwwdd24pp" class="btn btn-primary btn-icon" target="_blank">
                             <span class="btn-inner--text">Join us on Discord</span>
                             <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
                         </a>
@@ -327,28 +174,97 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <!--
                         <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" data-toggle="modal" data-target="#termsModal" href="">
                                     Terms
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" data-toggle="modal" data-target="#privacyModal" href="">
                                     Privacy
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" data-toggle="modal" data-target="#cookiesModal" href="">
                                     Cookies
                                 </a>
                             </li>
                         </ul>
+                    -->
                     </div>
                 </div>
             </div>
         </div>
-    </footer>   
+    </footer> 
+
+    <!-- Terms Modal -->
+    <div class="modal fade docs-example-modal-sm" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h6 class="modal-title" id="loginModalLabel">Terms</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-sm text-white mb-3">
+                    </p>
+                </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Privacy Modal -->
+    <div class="modal fade docs-example-modal-sm" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h6 class="modal-title" id="loginModalLabel">Privacy</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-sm text-white mb-3">
+                    </p>
+                </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookies Modal -->
+    <div class="modal fade docs-example-modal-sm" id="cookiesModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h6 class="modal-title" id="loginModalLabel">Cookies</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-sm text-white mb-3">
+                        sdadfaf
+                    </p>
+                </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
     <!-- scripts -->
     <script src="assets/js/index.js"></script>
     <script src="assets/js/jquery.min.js"></script>

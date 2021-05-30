@@ -5,6 +5,7 @@ const appHeaderContainer = document.getElementById("app-header-btns");
 const contentContainer = document.getElementById("content");
 
 async function logOut() {
+
   await Moralis.User.logOut();
   render();
   console.log("logged out. User:", Moralis.User.current());
@@ -26,8 +27,11 @@ async function loginWithEmail(isSignUp) {
   const email = document.getElementById("email").value;
   const pass = document.getElementById("pass").value;
 
+  const emailLogin = document.getElementById("emailLogin").value;
+  const passLogin = document.getElementById("passLogin").value;
+
   if (!email || !pass) {
-    alert("please provide both email and password");
+    alert("pleaseae provide both email and password");
     return;
   }
 
@@ -42,12 +46,13 @@ async function loginWithEmail(isSignUp) {
 
       await user.signUp();
     } else {
-      await Moralis.User.logIn(email, pass);
+      await Moralis.User.logIn(emailLogin, passLogin);
     }
 
     render();
   } catch (error) {
     console.log(error);
+
     alert("invalid username or password");
   }
 }
@@ -118,14 +123,16 @@ function renderHeader() {
 
   const user = Moralis.User.current();
   if (!user) {
+    document.getElementById("btn-logout").style.display = "none"; //.style.visibility = 'hidden'; // dgp
+    document.getElementById("btn-login").style.display = "inline"; //.style.visibility = 'visible'; // dgp
     return;
   }
   // show the logout, refresh buttons if user logged in
   // appHeaderContainer.innerHTML = `
   //    <button id="btn-logout">Logout</button>
   //  `; // dgp
-  document.getElementById("btn-logout").style.visibility = 'visible'; // dgp
-  document.getElementById("btn-login").style.visibility = 'hidden'; // dgp
+  document.getElementById("btn-logout").style.display = "inline"; //.style.visibility = 'visible'; // dgp
+  document.getElementById("btn-login").style.display = "none"; //.style.visibility = 'hidden'; // dgp
   document.getElementById("btn-logout").onclick = logOut;
 }
 
@@ -156,10 +163,14 @@ function buildLoginComponent(isSignUp = false) {
 
 function renderLogin(isSignUp) {
 
+  document.getElementById("btn-login").onclick= loginWithMetaMask;
+  document.getElementById("btn-logout").onclick= logOut; 
+
   //contentContainer.innerHTML = buildLoginComponent(isSignUp); // dgp
   isSignUp = false; // dgp
-  document.getElementById("btn-login-metamask").onclick = loginWithMetaMask;
+  document.getElementById("btn-login-metamask").onclick = loginWithMetaMask; // dgp antes era boton metamsk
   document.getElementById("btn-login-email").onclick = function () {
+    alert(isSignUp);
     loginWithEmail(isSignUp);
   };
   if (!isSignUp) {
@@ -239,7 +250,7 @@ function buildAddrListComponent(user) {
 
 function renderProfile(user) {
 
-  contentContainer.innerHTML = buildProfileComponent(user);
+  //contentContainer.innerHTML = buildProfileComponent(user); // dgp
   document.getElementById("btn-profile-set-pass").onclick = onSetPassword;
   document.getElementById("btn-profile-save").onclick = onSaveProfile;
   document.querySelectorAll(".btn-remove").forEach(function (button) {
@@ -362,13 +373,10 @@ function render() {
 
 function init() {
 
-  document.getElementById("btn-logout").style.visibility = 'hidden'; // dgp
-  document.getElementById("btn-login").style.visibility = 'visible'; // dgp
   listenForAccountChange();
 
   // render on page load
   render();
+  
 }
 init();
-
-document.getElementById("btn-login").onclick= renderLogin(false)
