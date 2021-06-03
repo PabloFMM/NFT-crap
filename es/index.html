@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="All the information about NFT, marketplaces, creators, drops and events">
+    <meta name="description" content="Toda la información sobre NFTs, marketplaces, creadores, drops y eventos">
     <meta name="author" content="NFT Crap">
     <title>NFT Crap</title>
 
@@ -72,10 +72,10 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <!-- Favicon -->
-    <link rel="icon" href="assets/img/nii.png" type="image/png">
-    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="icon" href="../assets/img/nii.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" id="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" id="stylesheet">
     <!-- FLAGS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
   </head>
@@ -84,7 +84,7 @@
     <!-- Preloader -->
     <div class="preloader">
         <div class="spinner-border text-primary" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only">Cargando...</span>
         </div>
     </div>
     <div class="modal fade" tabindex="-1" role="dialog" id="modal-cookies" data-backdrop="false" aria-labelledby="modal-cookies" aria-hidden="true">
@@ -96,7 +96,7 @@
                         We use cookies so that our themes work for you. By using our website, you agree to our use of cookies.
                     </p>
                     <!-- Buttons -->
-                    <a href="" class="btn btn-sm btn-white" target="_blank">Read more</a>
+                    <a href="" class="btn btn-sm btn-white" target="_blank">Leer más</a>
                     <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK</button>
                 </div>
             </div>
@@ -107,7 +107,7 @@
         <div class="container">
             <!-- Brand -->
             <a class="navbar-brand" href="index.html">
-                <img alt="Brand placeholder" src="assets/img/nii.png" id="navbar-logo">
+                <img alt="Brand placeholder" src="../assets/img/nii.png" id="navbar-logo">
                 <strong class="text-dark">NFT-Crap</strong>
             </a>
             <!-- Toggler -->
@@ -118,17 +118,17 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
                     <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                        <!-- https://nft-crap.com -->
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Language
-                          </a>
-                          <ul class="dropdown-menu  dropdown-menu-single" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="http://localhost:8000/cryptomierdas/"><span class="flag-icon flag-icon-us"> </span>  English</a></li>
-                            <li><a class="dropdown-item" href="http://localhost:8000/cryptomierdas/es/"><span class="flag-icon flag-icon-es"> </span>  Español</a></li>
-                          </ul>
+                        <!--<a class="nav-link dropdown-toggle" href="https://nft-crap.com/" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> English</a>-->
+                        <a class="nav-link" href="#" id="englishSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span> </span>Idioma</a>
+                        <div class="dropdown-menu  dropdown-menu-single" aria-labelledby="dropdown09">
+                            <a class="dropdown-item" href="http://localhost:8000/cryptomierdas/"><span class="flag-icon flag-icon-us"> </span>  English</a>
+                        </div>
+                        <div class="dropdown-menu  dropdown-menu-single" aria-labelledby="dropdown09">
+                            <a class="dropdown-item" href="http://localhost:8000/cryptomierdas/es/"><span class="flag-icon flag-icon-es"> </span>  Español</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comunidad</a>
                         <div class="dropdown-menu dropdown-menu-single">
                             <a href="https://discord.gg/ASwwdd24pp" class="dropdown-item">Discord</a>
                         </div>
@@ -142,8 +142,8 @@
                 </ul>
                 <!-- Button -->
                 <!--<a id="btn-login" class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" data-toggle="modal" data-target="#typeLoginModal" href="">login</a>-->
-                <button id="btn-login" type="button" class="navbar-btn btn btn-primary btn-sm">Connect wallet</button>
-                <button id="btn-logout" type="button" class="navbar-btn btn btn-neutral btn-sm">Logout</button>
+                <button id="btn-login" type="button" class="navbar-btn btn btn-primary btn-sm">Conecta cartera</button>
+                <button id="btn-logout" type="button" class="navbar-btn btn btn-neutral btn-sm">Salir</button>
             </div>
         </div>
     </nav>
@@ -175,7 +175,7 @@
                     <!-- Buttons -->
                     <div class="text-center text-md-left mt-5">
                         <a href="https://discord.gg/ASwwdd24pp" class="btn btn-primary btn-icon" target="_blank">
-                            <span class="btn-inner--text">Join us on Discord</span>
+                            <span class="btn-inner--text">Únete en Discord</span>
                             <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
                         </a>
                         <!--<a href="" class="btn btn-neutral btn-icon d-none d-lg-inline-block" target="_blank">Encuéntranos en Discord</a>-->
@@ -194,7 +194,7 @@
                 <div class="row align-items-center justify-content-md-between pb-4">
                     <div class="col-md-6">
                         <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                            &copy; 2021 <a href="" class="font-weight-bold" target="_blank">NFT Crap</a>. All rights reserved
+                            &copy; 2021 <a href="" class="font-weight-bold" target="_blank">NFT Crap</a>. Todos los derechos reservados
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -202,12 +202,12 @@
                         <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="modal" data-target="#termsModal" href="">
-                                    Terms
+                                    Términos y condiciones
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="modal" data-target="#privacyModal" href="">
-                                    Privacy
+                                    Privacidad
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -228,7 +228,7 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h6 class="modal-title" id="loginModalLabel">Terms</h6>
+                <h6 class="modal-title" id="loginModalLabel">Términos y condiciones</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -250,7 +250,7 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h6 class="modal-title" id="loginModalLabel">Privacy</h6>
+                <h6 class="modal-title" id="loginModalLabel">Privacidad</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -289,8 +289,8 @@
         
 
     <!-- scripts -->
-    <script src="assets/js/index.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
