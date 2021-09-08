@@ -12,52 +12,9 @@
     background-image: url("../img/background_10.jpg");
 }
 
-/***** team ****
+/***** News ****/
 
-.fa {
-    font-weight: 900;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-}
+.bg-black {
+    background-color: #000000 !important;
+  }
 
-.fa-2x {
-    font-size: 2em;
-}
-
-.facebook {
-    color: #3b5998
-}
-
-
-
-.google {
-    color: #dc4e41
-}
-
-.linkedin {
-    color: #0077b5
-}
-
-.twitter {
-    color: #55acee
-}
-
-.fa-twitter:before {
-    background-image: url("../img/twitter.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 30px;
-}
-.fa-linkedin:before {
-    background-image: url("../img/linkedin.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    content:"\f099";
-}
-
-*/
