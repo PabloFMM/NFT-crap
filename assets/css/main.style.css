@@ -1,5 +1,4 @@
 /***** cover  *****/
-
 .bg-cover {
     position: absolute;
     top: 0;
@@ -9,7 +8,15 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: url("../img/background_10.jpg");
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("../img/electrique.jpg");
+    background-image: -webkit-linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("../img/electrique.jpg");
+}
+
+.fw-500 {
+    font-weight: 400 !important;
+}
+.text-black{
+    color: #000  !important;
 }
 
 /***** News ****/
@@ -18,3 +25,43 @@
     background-color: #000000 !important;
   }
 
+
+ /*** preloader ***/
+  @keyframes hidePreloader {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+body>div.preloader {
+    position: fixed;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 1071;
+    opacity: 0;
+    transition: opacity .5s ease;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body:not(.loaded)>div.preloader {
+    opacity: 1;
+}
+
+body:not(.loaded) {
+    overflow: hidden;
+}
+
+body.loaded>div.preloader {
+    animation: hidePreloader .5s linear .5s forwards;
+}

@@ -4,6 +4,22 @@ Moralis.serverURL = "https://nq7wjctja3gs.moralis.io:2053/server";
 const appHeaderContainer = document.getElementById("app-header-btns");
 const contentContainer = document.getElementById("content");
 
+/*
+if ($("#navarCollapse").hasClass("show")) {
+  //$("nav").toggleClass("bg-light");
+  nav.classList.add('bg-white');
+}
+*/
+
+
+// Preloader
+window.addEventListener("load", function() {
+  setTimeout(function() {
+      document.querySelector('body').classList.add('loaded');
+  }, 300);
+});
+
+// Connect Wallet
 async function logOut() {
 
   await Moralis.User.logOut();

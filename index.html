@@ -8,55 +8,6 @@
         <meta name="author" content="NFT Crap">
         <title>NFT Crap</title>
 
-            <!-- Preloader -->
-            <style>
-            @keyframes hidePreloader {
-                0% {
-                    width: 100%;
-                    height: 100%;
-                }
-    
-                100% {
-                    width: 0;
-                    height: 0;
-                }
-            }
-    
-            body>div.preloader {
-                position: fixed;
-                background: white;
-                width: 100%;
-                height: 100%;
-                z-index: 1071;
-                opacity: 0;
-                transition: opacity .5s ease;
-                overflow: hidden;
-                pointer-events: none;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-    
-            body:not(.loaded)>div.preloader {
-                opacity: 1;
-            }
-    
-            body:not(.loaded) {
-                overflow: hidden;
-            }
-    
-            body.loaded>div.preloader {
-                animation: hidePreloader .5s linear .5s forwards;
-            }
-        </style>
-        <script>
-            window.addEventListener("load", function() {
-                setTimeout(function() {
-                    document.querySelector('body').classList.add('loaded');
-                }, 300);
-            });
-        </script>
-        
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSVZN1X5GX"></script>
@@ -73,20 +24,17 @@
         <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
         <!-- Favicon -->
         <link rel="icon" href="assets/img/logo-beeple-1.png" type="image/png">
-        <!--<link rel="stylesheet" href="assets/css/all.min.css">-->
         <!-- CSS -->
-        <!--<link rel="stylesheet" href="assets/css/style.css" id="stylesheet">-->
         <link rel="stylesheet" href="assets/css/main.style.css" id="stylesheet">
         <link rel="stylesheet" href="assets/css/bootstrap.style.css" id="stylesheet">
         
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" id="stylesheet">-->
     </head>
 
     <body>
         
         <!-- Preloader -->
         <div class="preloader">
-            <div class="spinner-border text-primary" role="status">
+            <div class="spinner-border text-dark" role="status">
                 <!--<span class="sr-only">Loading...</span>-->
             </div>
         </div>
@@ -105,28 +53,14 @@
                 </button>
                 <!-- Collapse -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <!--<ul class="navbar-nav mt-4 mt-lg-0 ml-auto">-->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Game navbar 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#Game" id="navbarGame" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                The game
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarGame">
-                                <a class="dropdown-item  active " href="#">Intro</a>
-                                <a class="dropdown-item " href="#">Characters</a>
-                                <a class="dropdown-item " href="#">Add-ons</a>
-                                <a class="dropdown-item " href="#">Rules</a>
-                            </div>
-                        </li>
-                    --> 
+                    <ul class="navbar-nav ms-auto fw-bold">
                         <li class="nav-item">
-                            <a class="nav-link  me-2" href="#Roadmap" id="navbarRoadmap" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link text-black me-2" href="#Roadmap" id="navbarRoadmap" role="button" aria-haspopup="true" aria-expanded="false">
                                 Roadmap
                             </a>
                         </li>    
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#News" id="navbarNews" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li class="nav-item dropdown text-black">
+                            <a class="nav-link dropdown-toggle text-black" href="#News" id="navbarNews" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 The NFT-Crap News
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarNews">
@@ -137,12 +71,12 @@
                             </div>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link  me-2" href="#Team" id="navbarTeam" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link text-black me-2" href="#Team" id="navbarTeam" role="button" aria-haspopup="true" aria-expanded="false">
                                 Team
                             </a>
                         </li>                   
                         <li class="nav-item dropdown me-2">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarLanguage" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 EN
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarLanguage">
@@ -150,7 +84,7 @@
                             </div>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link me-2" href="https://discord.gg/ASwwdd24pp" id="navbarDiscord" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link text-black me-2" href="https://discord.gg/ASwwdd24pp" id="navbarDiscord" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="assets/img/discord-black-icon.png" id="Discord-logo" width="30" alt="Discord" class="align-text-center">
                             </a>
                         </li>  
@@ -166,31 +100,29 @@
         <A name="Home"></A>
 
         <!-- Cover -->
-        <div class="container-fluid d-flex h-100 bg-cover justify-content-center align-items-center gx-0"> <!-- shadow-->
+        <div class="container-fluid d-flex h-100 justify-content-center align-items-center gx-0 bg-cover">
         <!-- Content -->
-            <div class="row justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center" style="opacity: 1;">
                 <div class="col">
-                    
                     <!-- Heading -->
-                    <h1 class="text-white text-center mb-4 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="1" data-animation-trigger="load">
+                    <h1 class="text-dark text-center mb-4 animate fw-bold" data-toggle="animation" data-animation="fadeUp" data-animation-order="1" data-animation-trigger="load"> 
                         The fisrt NFT LARP game
                     </h1>
             </div>
             <div class="row justify-content-center align-items-center">
                     <!-- Subheading -->
                     <div class="col-sm-8 col-md-6 col-lg-5">
-                        <h3 class="lead text-white text-center mb-5 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="load">
+                        <h5 class="text-center mb-5 animate fw-500" data-toggle="animation" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="load"> 
                             Enjoy an amazing live action role playing game using NFTs to mix virtual and real world 
-                        </h3>                            
+                        </h5>                            
                     </div>
 
                     <!-- Button -->
                     <p class="text-center mb-0 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
-                        <a href="https://discord.gg/ASwwdd24pp" target="_blank" class="btn btn-outline-light">
+                        <a href="https://discord.gg/ASwwdd24pp" target="_blank" class="btn btn-outline-dark fw-bold">
                             Join us on Discord
                         </a>
                     </p>
-        
                 </div>
             </div> <!-- row -->
 
@@ -198,24 +130,10 @@
             <A name="Roadmap"></A>
 
         </div> <!-- container -->
-    
         <!-- overlay -->
         <div class="container-fluid vh-100 align-items-center bg-light"></div> 
-        
-
-            <!-- Triangles 
-            <div class="bg-triangle bg-triangle-light bg-triangle-bottom bg-triangle-left"></div>
-            <div class="bg-triangle bg-triangle-light bg-triangle-bottom bg-triangle-right"></div>
-            -->
-
-
-            
-        <!-- Roadmap v2-->
-        <div class="container-fluid bg-light pb-5"> <!-- shadow-->
-
-            <!-- Content -->
-            <!--<div class="container py-2 mt-4 mb-4">-->
-    
+        <!-- Roadmap -->
+        <div class="container-fluid bg-light pb-5">
                 <!-- Title and introduction -->
                 <div class="row align-items-center justify-content-center px-5 py-4">
                     <h1 class="display-4 text-center text-md-left mb-3">
@@ -223,10 +141,8 @@
                     </h1>
                     <p class="lead text-center text-md-left text-muted mb-4">
                         We start this new adventure at the beginning of 2021. We are working hard to <strong>show our project, including first interaction between role game and real world, at the first Veecon</strong> - Veefriends Conference by GaryVee - in 2022. To acomplish that aim we are following this roadmap. We are and will be fully transparent so feel free to ask any doubt about its details and fulfilment.
-                    </p>    
-               
+                    </p>      
                 </div>
-    
                 <!-- timeline item 1 -->
                 <div class="row justify-content-center no-gutters">
                     <!-- spacer -->
@@ -350,9 +266,7 @@
                         </div>
                     </div>
                 </div><!-- timeline item 4 -->
-           
                 <A name="News"></A>
-    
             </div> <!-- roadmap-->
     
 
@@ -387,7 +301,7 @@
                     <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
                         Vol 1. The Noble Numbat Lava Case
                     </h2>
-                    <p class="lead text-muted py-4">resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen </p>
+                    <p class="lead text-muted py-4">The Noble Numbat lava case was one of a kind. It taught us a lesson from a huge mistake committed while purchasing an NFT but also embraced the value of a great community and its solidarity.</p>
                     <!-- Button -->
                     <p class="text-center animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
                         <a href="https://cberuete.medium.com/the-noble-numbat-lava-case-a-lesson-from-a-huge-mistake-d44b8a128c91" target="_blank" class="btn btn-outline-dark">
@@ -416,7 +330,7 @@
                     <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
                         Vol 2. Hard Wallet
                     </h2>
-                    <p class="lead text-muted py-4">Do you feel your NFTs and funds are safe in Metamask protected with a strong password with letters, numbers and special character? They are not. Please, read this article.  </p>          
+                    <p class="lead text-muted py-4">Do you feel your NFTs and funds are safe in your wallet? Only protected by a strong password with letters, numbers and special characters? They are not. Please, read this article ASAP.</p>          
                     <!-- Button -->
                     <p class="text-center animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
                         <a href="https://cberuete.medium.com/hard-wallet-how-it-works-and-how-to-secure-it-a43becb8ac41" target="_blank" class="btn btn-outline-dark">
@@ -445,7 +359,7 @@
                     <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
                         Vol 3. Gas Fee
                     </h2>
-                    <p class="lead text-muted py-4">resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen </p>
+                    <p class="lead text-muted py-4">High prices on gas fees are affecting the normal activity of transactions on the Ethereum blockchain. It has even become a barrier for nouveau artists. Here are three hacks to deal with it.</p>
                     <!-- Button -->
                     <p class="text-center animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
                         <a href="https://cberuete.medium.com/gas-fees-something-to-deal-with-95a61745ffdc" target="_blank" class="btn btn-outline-dark">
@@ -474,13 +388,19 @@
                     <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
                         Vol 4. Fake NFT
                     </h2>
-                    <p class="lead text-muted py-4">resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen resumen resumen reseumen </p>
+                    <p class="lead text-muted py-4">As NFTs become more popular, so do scammers. Some artists have already reported being plagiarized. Learn why these digital assets can be a turning point for artists and intellectual property.</p>
                     <!-- Button -->
                     <p class="text-center animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
                         <a href="https://cberuete.medium.com/fake-nft-a-threat-to-digital-intellectual-property-8efb977aed49" target="_blank" class="btn btn-outline-dark">
                             Read article
                         </a>
                     </p>
+                    <!--
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-outline-dark" type="button">Button</button>
+                        <button class="btn btn-outline-dark" type="button">Button</button>
+                    </div>
+                    -->
                 </div>
                 <!-- Image -->
                 <div class="order-md-1 col-md-6 p-3 text-center justify-content-center"> 
@@ -512,7 +432,7 @@
             <!-- team members -->
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center px-5">
                 <div class="col-sm-6 col-md-4 my-2">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body text-center"> <img src="assets/img/foto_pablo.jpg" class="rounded-circle" width="200" height="200">
                             <h5 class="card-title mt-2 mb-1">Pablo Fernández-Maquieira</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
                             <p class="mb-3 mt-3">Proactive and decisive, I always look for work. つ づ く</p>
@@ -524,7 +444,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 my-2">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body text-center"> <img src="assets/img/foto_clio.jpg" class="rounded-circle" width="200" height="200">
                             <h5 class="card-title mt-2 mb-1">Clio Beruete</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
                             <p class="mb-3 mt-3">Mobile and Online Journalist. Blogger. Social Media.</p>
@@ -536,7 +456,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 my-2">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body text-center"> <img src="assets/img/foto_iago.jpg" class="rounded-circle" width="200" height="200">
                             <h5 class="card-title mt-2 mb-1">Iago Fernández-Cedrón</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
                             <p class="mb-3 mt-3">Business Development, Innovation, project management, Entrepreneur. NFTs.</p>
@@ -548,7 +468,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 my-2">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body text-center"> <img src="assets/img/foto_dani.jpg" class="rounded-circle" width="200" height="200">
                             <h5 class="card-title mt-2 mb-1">Daniel Garrido</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
                             <p class="mb-3 mt-3">Family and friends first! Blockchain and NFT lover.</p>
