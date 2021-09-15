@@ -1,265 +1,615 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Toda la información sobre NFTs, marketplaces, creadores, drops y eventos">
-    <meta name="author" content="NFT Crap">
-    <title>NFT Crap</title>
-
-        <!-- Preloader -->
-        <style>
-          @keyframes hidePreloader {
-              0% {
-                  width: 100%;
-                  height: 100%;
-              }
-  
-              100% {
-                  width: 0;
-                  height: 0;
-              }
-          }
-  
-          body>div.preloader {
-              position: fixed;
-              background: white;
-              width: 100%;
-              height: 100%;
-              z-index: 1071;
-              opacity: 0;
-              transition: opacity .5s ease;
-              overflow: hidden;
-              pointer-events: none;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-          }
-  
-          body:not(.loaded)>div.preloader {
-              opacity: 1;
-          }
-  
-          body:not(.loaded) {
-              overflow: hidden;
-          }
-  
-          body.loaded>div.preloader {
-              animation: hidePreloader .5s linear .5s forwards;
-          }
-      </style>
-      <script>
-          window.addEventListener("load", function() {
-              setTimeout(function() {
-                  document.querySelector('body').classList.add('loaded');
-              }, 300);
-          });
-      </script>
-    
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSVZN1X5GX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-MSVZN1X5GX');
-    </script>
-
-    <!-- Moralis -->
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
-    <!-- Favicon -->
-    <link rel="icon" href="../assets/img/logo-beeple-1.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/all.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css" id="stylesheet">
-    <!-- FLAGS-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
-  </head>
-
-  <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="spinner-border text-primary" role="status">
-            <span class="sr-only">Cargando...</span>
-        </div>
-    </div>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand" href="#">
-                <img alt="Brand placeholder" src="../assets/img/logo-beeple-1.png" id="navbar-logo">
-                <strong class="text-dark">NFT-Crap</strong>
-            </a>
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Collapse -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
-                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comunidad</a>
-                        <div class="dropdown-menu dropdown-menu-single">
-                            <a href="https://discord.gg/ASwwdd24pp" class="dropdown-item">Discord</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">ES</a>
-                        <div class="dropdown-menu dropdown-menu-single">
-                            <a href="https://nft-crap.com/" class="dropdown-item">EN</a>
-                        </div>
-                    </li>
-                </ul>
-                <!-- Button -->
-                <button id="btn-login" type="button" class="navbar-btn btn btn-primary btn-sm">Conecta cartera</button>
-                <button id="btn-logout" type="button" class="navbar-btn btn btn-neutral btn-sm">Salir</button>
-            </div>
-        </div>
-    </nav>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="El primer juego de rol en vivo con NFT">
+        <meta name="author" content="NFT Crap">
+        <title>NFT Crap</title>
 
 
-    <!-- Main content -->
-    <section class="slice py-5">
-        <div class="container">
-            <div class="row row-grid align-items-center">
-                <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                    <!-- Image -->
-                    <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/100731795674767299273870001540440312159182809856310535080044676626455971495937/">
-                        <img alt="Image placeholder" src="../assets/img/ES-Vol1-1.png" class="img-thumbnail" >
-                    </a>
-                    <a href="https://cberuete.medium.com/the-noble-numbat-lava-case-a-lesson-from-a-huge-mistake-d44b8a128c91">Go to the article</a>
-                </div>
-                <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
-                    <!-- Heading -->
-                    <h1 class="display-4 text-center text-md-left mb-3">
-                        Facilitando el acceso al <strong class="text-primary">mundo de los NFT</strong>
-                    </h1>
-                    <p class="lead text-center text-md-left text-muted">
-                        Sumérgete en el mundo de los NFTs con una gran comunidad que comparte su experiencia y conocimiento.
-                    </p>
-                    <!-- Buttons -->
-                    <div class="text-center text-md-left mt-5">
-                        <a href="https://discord.gg/ASwwdd24pp" class="btn btn-primary btn-icon" target="_blank">
-                            <span class="btn-inner--text">Únete en Discord</span>
-                            <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSVZN1X5GX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    <footer class="position-relative" id="footer-main">
-        <div class="footer pt-lg-5 footer-light">
-            <!-- Footer -->
-            <div class="container pt-4">
+            gtag('config', 'G-MSVZN1X5GX');
+        </script>
 
-                <hr class="divider divider-fade divider-dark my-4">
-                <div class="row align-items-center justify-content-md-between pb-4">
-                    <div class="col-md-6">
-                        <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                            &copy; 2021 <a href="" class="font-weight-bold" target="_blank">NFT Crap</a>. Todos los derechos reservados
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <!--
-                        <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="modal" data-target="#termsModal" href="">
-                                    Términos y condiciones
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="modal" data-target="#privacyModal" href="">
-                                    Privacidad
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="modal" data-target="#cookiesModal" href="">
-                                    Cookies
-                                </a>
-                            </li>
-                        </ul>
-                    -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer> 
-
-    <!-- Terms Modal -->
-    <div class="modal fade docs-example-modal-sm" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h6 class="modal-title" id="loginModalLabel">Términos y condiciones</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-sm text-white mb-3">
-                    </p>
-                </div>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Privacy Modal -->
-    <div class="modal fade docs-example-modal-sm" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h6 class="modal-title" id="loginModalLabel">Privacidad</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-sm text-white mb-3">
-                    </p>
-                </div>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cookies Modal -->
-    <div class="modal fade docs-example-modal-sm" id="cookiesModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h6 class="modal-title" id="loginModalLabel">Cookies</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-sm text-white mb-3">
-                    </p>
-                </div>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- Moralis -->
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+        <!-- Favicon -->
+        <link rel="icon" href="../assets/img/logo-beeple-1.png" type="image/png">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/main.style.css" id="stylesheet">
+        <link rel="stylesheet" href="../assets/css/bootstrap.style.css" id="stylesheet">
         
+    </head>
 
-    <!-- scripts -->
-    <script src="../assets/js/index.js"></script>
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-  </body>
+    <body>
+        
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="spinner-border text-dark" role="status">
+                <!--<span class="sr-only">Loading...</span>-->
+            </div>
+        </div>
+        
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-togglable fixed-top navbar-light"> <!-- bg-white shadow-->
+            <div class="container">
+                <!-- Brand-->
+                <a class="navbar-brand" href="index.html">
+                    <img src="../assets/img/logo-beeple-1.png" id="navbar-logo" width="40" alt="NFT Crap" class="align-text-center">
+                    <strong class="text-dark">&nbsp;NFT-Crap</strong>
+                </a>
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collapse -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link text-black me-2" href="#Roadmap" id="navbarRoadmap" role="button" aria-haspopup="true" aria-expanded="false">
+                                Roadmap
+                            </a>
+                        </li>    
+                        <li class="nav-item dropdown text-black">
+                            <a class="nav-link dropdown-toggle text-black" href="#News" id="navbarNews" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                The NFT-Crap News
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarNews">
+                                <a class="dropdown-item" href="#Vol1">Vol 1. The Noble Numbat Lava Case</a>
+                                <a class="dropdown-item" href="#Vol2">Vol 2. Haard Wallet</a>
+                                <a class="dropdown-item" href="#Vol3">Vol 3. Gas Fee</a>
+                                <a class="dropdown-item" href="#Vol4">Vol 4. Falsos NFT</a>
+                            </div>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link text-black me-2" href="#Team" id="navbarTeam" role="button" aria-haspopup="true" aria-expanded="false">
+                                Equipo
+                            </a>
+                        </li>                   
+                        <li class="nav-item dropdown me-2">
+                            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarLanguage" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ES
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarLanguage">
+                                <a class="dropdown-item" href="https://nft-crap.com/">EN</a>
+                            </div>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link text-black me-2" href="https://discord.gg/ASwwdd24pp" id="navbarDiscord" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../assets/img/discord-black-icon.png" id="Discord-logo" width="30" alt="Discord" class="align-text-center">
+                            </a>
+                        </li>  
+                    </ul>
+                    <!-- Button -->
+                    <button id="btn-login" type="button" class="navbar-btn btn btn-dark btn-sm">Conecta cartera</button>
+                    <button id="btn-logout" type="button" class="navbar-btn btn btn-outline-dark btn-sm">Salir</button>
+                </div>
+
+            </div>
+        </nav>
+        
+        <A name="Home"></A>
+
+        <!-- Cover -->
+        <div class="container-fluid d-flex h-100 justify-content-center align-items-center gx-0 bg-cover">
+        <!-- Content -->
+            <div class="row justify-content-center align-items-center" style="opacity: 1;">
+                <div class="col">
+                    <!-- Heading -->
+                    <h1 class="text-dark text-center mb-4 animate fw-bold" data-toggle="animation" data-animation="fadeUp" data-animation-order="1" data-animation-trigger="load"> 
+                        El primer juego NFT de rol en vivo
+                    </h1>
+            </div>
+            <div class="row justify-content-center align-items-center">
+                    <!-- Subheading -->
+                    <div class="col-sm-8 col-md-6 col-lg-5">
+                        <h5 class="text-center mb-5 animate fw-500" data-toggle="animation" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="load"> 
+                            Disfruta este increible juego de rol en vivo usando NFTs para unir el mundo real y virtual 
+                        </h5>                            
+                    </div>
+
+                    <!-- Button -->
+                    <p class="text-center mb-0 animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
+                        <a href="https://discord.gg/ASwwdd24pp" target="_blank" class="btn btn-outline-dark fw-bold">
+                            Únete en Discord
+                        </a>
+                    </p>
+                </div>
+            </div> <!-- row -->
+
+            
+            <A name="Roadmap"></A>
+
+        </div> <!-- container -->
+        <!-- overlay -->
+        <div class="container-fluid vh-100 align-items-center bg-light"></div> 
+        <!-- Roadmap -->
+        <div class="container-fluid bg-light pb-5">
+            <!-- Title and introduction -->
+            <div class="row align-items-center justify-content-center px-5 py-4">
+                <h1 class="display-4 text-center text-md-left mb-3">
+                    <strong>Roadmap - Book One</strong>
+                </h1>
+                <p class="lead text-center text-md-left text-muted mb-4">
+                    We start this new adventure at the beginning of 2021. We are working hard to <strong>show our project, including first interaction between role game and real world, at the first Veecon</strong> - Veefriends Conference by GaryVee - in 2022. To acomplish that aim we are following this roadmap. We are and will be fully transparent so feel free to ask any doubt about its details and fulfilment.
+                </p>      
+            </div>
+            <!-- timeline item 1 -->
+            <div class="row justify-content-center no-gutters">
+                <!-- spacer -->
+                <div class="col-0 col-sm-5 order-3 order-sm-1"></div>
+                <!-- divider -->
+                <div class="col-1 col-sm-1 order-1 order-sm-2 text-center">
+                    <div class="row h-50">
+                        <div class="col-6">&nbsp;</div>
+                    </div>
+                    <div class="row justify-content-center my-1">
+                        <h5><span class="badge rounded-circle bg-light border">&nbsp;</span></h5>
+                    </div>
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="col-9 col-sm-5 order-2 order-sm-3 py-2 ms-2 ms-sm-0">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h4>Chapter 1</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Design of the game: Lore, characaters and mechanics.</p>
+                            <p class="card-text">First NFT-Crap tokens.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- timeline item 1-->
+
+            <!-- timeline item 2 -->
+            <div class="row justify-content-center no-gutters">
+                <!-- spacer -->
+                <div class="col-0 col-sm-5 order-3 order-sm-3"></div>
+                <!-- divider -->
+                <div class="col-1 col-sm-1 order-1 order-sm-2 text-center">
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                    <div class="row justify-content-center my-1">
+                        <h5><span class="badge rounded-circle bg-light border">&nbsp;</span></h5>
+                    </div>
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="col-9 col-sm-5 order-2 order-sm-1 py-2 ms-2 ms-sm-0">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h4>Chapter 2</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">555 token airdrop for the Veefriend community.</p>
+                            <p class="card-text">Bringing value to other NFTs collections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- timeline item 2 -->
+
+            <!-- timeline item 3 -->
+            <div class="row justify-content-center no-gutters">
+                <!-- spacer -->
+                <div class="col-0 col-sm-5 order-3 order-sm-1"></div>
+                <!-- divider -->
+                <div class="col-1 col-sm-1 order-1 order-sm-2 text-center">
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                    <div class="row justify-content-center my-1">
+                        <h5><span class="badge rounded-circle bg-light border">&nbsp;</span></h5>
+                    </div>
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="col-9 col-sm-5 order-2 order-sm-3 py-2 ms-2 ms-sm-0">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h4>Chapter 3</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Bridging analog and digital world together.</p>
+                            <p class="card-text">Activate the tools for the community to guide the game future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- timeline item 3-->
+
+            <!-- timeline item 4 -->
+            <div class="row justify-content-center no-gutters">
+                <!-- spacer -->
+                <div class="col-0 col-sm-5 order-3 order-sm-3"></div>
+                <!-- divider -->
+                <div class="col-1 col-sm-1 order-1 order-sm-2 text-center">
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                    <div class="row justify-content-center my-1">
+                        <h5><span class="badge rounded-circle bg-light border">&nbsp;</span></h5>
+                    </div>
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="col-9 col-sm-5 order-2 order-sm-1 py-2 ms-2 ms-sm-0">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h4>Chapter 4</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">v1.0 NFT-Crap Transparency Report token.</p>
+                            <p class="card-text">Starting fist LARP campaing adventure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- timeline item 4 -->
+            <!-- timeline item 5 -->
+            <div class="row justify-content-center no-gutters">
+                <!-- spacer -->
+                <div class="col-0 col-sm-5 order-3 order-sm-1"></div>
+                <!-- divider -->
+                <div class="col-1 col-sm-1 order-1 order-sm-2 text-center">
+                    <div class="row h-50">
+                        <div class="col-6 border-end">&nbsp;</div>
+                    </div>
+                    <div class="row justify-content-center my-1">
+                        <h5><span class="badge rounded-circle bg-light border">&nbsp;</span></h5>
+                    </div>
+                    <div class="row h-50">
+                        <div class="col-6">&nbsp;</div>
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="col-9 col-sm-5 order-2 order-sm-3 py-2 ms-2 ms-sm-0">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h4>Chapter 5</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">To be continued...</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- timeline item 5-->
+            <A name="News"></A>
+        </div> <!-- roadmap-->
+        <!-- NFT Crap News content -->
+        <div class="container-fluid bg-light pb-5"> <!-- shadow-->
+            <!-- Divider -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-11">
+                    <hr class="divider divider-fade divider-dark my-4">
+                </div>
+            </div>
+            <!-- Title and introduction -->
+            <div class="row align-items-center justify-content-center px-5 py-4">
+                <h1 class="display-4 text-center text-md-left mb-3">
+                    <strong>The NFT Crap News</strong>
+                </h1>
+                <p class="lead text-center text-md-left text-muted mb-4">
+                    This is our first NFT experiment. The main purpose is to share good advices and interesting knowledge with the community. We post a piece of news on the 5th of every month and register it as NFT on the Ethereum Blockchain. These NFTs will be <strong>very powerful in the LARP game</strong> as prize for those early adopters who support our project by buying them. Don't loose the chance, there are just five in English and another five in Spanish of each piece of news.
+                </p>    
+                <!-- Button -->
+                <p class="text-center animate" data-toggle="animation" data-animation="fadeUp" data-animation-order="3" data-animation-trigger="load">
+                    <a href="https://opensea.io/collection/the-nft-crap-news" target="_blank" class="btn btn-outline-dark">
+                        Visit our collection
+                    </a>
+                </p>
+            </div>
+            <!-- reference Vol 1 -->
+            <A name="Vol1"></A>
+            <!-- Vol 1. The Lava Numba Case -->
+            <div class="row align-items-center justify-content-center px-5 pb-4">
+                <div class="order-md-1 col-md-6 p-3 text-center">
+                    <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
+                        Vol 1. The Noble Numbat Lava Case
+                    </h2>
+                    <p class="lead text-muted py-4">The Noble Numbat lava case was one of a kind. It taught us a lesson from a huge mistake committed while purchasing an NFT but also embraced the value of a great community and its solidarity.</p>
+                    <!-- Button -->
+                    <a class="btn btn-outline-dark me-2" href="https://cberuete.medium.com/the-noble-numbat-lava-case-a-lesson-from-a-huge-mistake-d44b8a128c91" target="_blank">
+                        Learn more
+                    </a>
+                    <a class="btn btn-outline-dark m-s2" href="https://opensea.io/collection/the-nft-crap-news?collectionSlug=the-nft-crap-news&search[query]=numbat&search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Language&search[stringTraits][0][values][0]=English" target="_blank">
+                        Yes, I want it
+                    </a>
+                </div>
+                <div class="order-md-2 col-md-6 p-3 text-center justify-content-center">
+                    <!-- Image -->
+                    <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/100731795674767299273870001540440312159182809856310535080044676618759390101505/" target="_blank">
+                        <img alt="The Lava Numba Case" src="../assets/img/EN-Vol1-1.png" class="img-thumbnail"  width="600">
+                    </a>
+                </div>
+            </div> <!-- Vol 1 -->
+            <!-- Divider -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-10">
+                    <hr class="divider divider-fade divider-dark my-4">
+                </div>
+            </div>
+            <!-- reference Vol 2 -->
+            <A name="Vol2"></A>
+            <!-- Vol 2. Hard Wallet -->
+            <div class="row align-items-center justify-content-center px-5 pb-4">
+                <div class="order-md-2 col-md-6 p-3 text-center">
+                    <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
+                        Vol 2. Hard Wallet
+                    </h2>
+                    <p class="lead text-muted py-4">Do you feel your NFTs and funds are safe in your wallet? Only protected by a strong password with letters, numbers and special characters? They are not. Please, read this article ASAP.</p>          
+                    <!-- Button -->
+                    <a class="btn btn-outline-dark me-2" href="https://cberuete.medium.com/hard-wallet-how-it-works-and-how-to-secure-it-a43becb8ac41" target="_blank">
+                        Learn more
+                    </a>
+                    <a class="btn btn-outline-dark ms-2" href="https://opensea.io/collection/the-nft-crap-news?collectionSlug=the-nft-crap-news&search[query]=hard%20wallet%20%28EN%29&search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=LANGUAGE&search[stringTraits][0][values][0]=English" target="_blank">
+                        Yes, I want it
+                    </a>
+                </div>
+                <div class="order-md-1 col-md-6 p-3 text-center justify-content-center">
+                    <!-- Image -->
+                    <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/100731795674767299273870001540440312159182809856310535080044676631953529634817/" target="_blank">
+                        <img alt="Hard Wallet" src="../assets/img/EN-Vol2-1.png" class="img-thumbnail"  width="400">
+                    </a>
+                </div>
+            </div> <!-- row -->
+            <!-- Divider -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-10">
+                    <hr class="divider divider-fade divider-dark my-4">
+                </div>
+            </div>
+            <!-- reference Vol 3 -->
+            <A name="Vol3"></A>
+            <!-- Vol 3. Gas Fee-->
+            <div class="row align-items-center justify-content-center px-5 pb-4">
+                <div class="order-md-1 col-md-6 p-3 text-center">
+                    <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
+                        Vol 3. Gas Fee
+                    </h2>
+                    <p class="lead text-muted py-4">High prices on gas fees are affecting the normal activity of transactions on the Ethereum blockchain. It has even become a barrier for nouveau artists. Here are three hacks to deal with it.</p>
+                    <!-- Button -->
+                    <a class="btn btn-outline-dark me-2" href="https://cberuete.medium.com/gas-fees-something-to-deal-with-95a61745ffdc" target="_blank">
+                        Learn more
+                    </a>
+                    <a class="btn btn-outline-dark ms-2" href="https://opensea.io/collection/the-nft-crap-news?collectionSlug=the-nft-crap-news&search[query]=Gas%20fee&search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Language&search[stringTraits][0][values][0]=English" target="_blank">
+                        Yes, I want it
+                    </a>
+                </div>
+                <!-- Image -->
+                <div class="order-md-2 col-md-6 p-3 text-center justify-content-center">
+                    <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/100731795674767299273870001540440312159182809856310535080044676642948645912577/" target="_blank">
+                        <img alt="Gas Fee" src="../assets/img/EN-Vol3-1.png" class="img-thumbnail bg-black" width="400">
+                    </a>
+                </div>
+            </div> <!-- Vol 3 -->
+            <!-- Divider -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-10">
+                    <hr class="divider divider-fade divider-dark my-4">
+                </div>
+            </div>
+            <!-- Reference Vol 4 -->
+            <A name="Vol4"></A>
+            <!-- Vol 4. False NFT-->
+            <div class="row align-items-center justify-content-center px-5 pb-4">
+                <div class="order-md-2 col-md-6 p-3 text-center">
+                    <h2 class="text-center text-dark animate pt-2" data-toggle="animation" data-animation="fadeUp" data-animation-order="0" data-animation-trigger="load">
+                        Vol 4. Fake NFT
+                    </h2>
+                    <p class="lead text-muted py-4">As NFTs become more popular, so do scammers. Some artists have already reported being plagiarized. Learn why these digital assets can be a turning point for artists and intellectual property.</p>
+                    <!-- Button -->
+                    <a class="btn btn-outline-dark me-2" href="https://cberuete.medium.com/fake-nft-a-threat-to-digital-intellectual-property-8efb977aed49" target="_blank">
+                        Learn more
+                    </a>
+                    <a class="btn btn-outline-dark ms-2" href="https://opensea.io/collection/the-nft-crap-news?collectionSlug=the-nft-crap-news&search[query]=fake%20NFT&search[sortAscending]=true&search[sortBy]=PRICE" target="_blank">
+                        Yes, I want it
+                    </a>
+                </div>
+                <!-- Image -->
+                <div class="order-md-1 col-md-6 p-3 text-center justify-content-center"> 
+                    <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/100731795674767299273870001540440312159182809856310535080044676653943762190337/" target="_blank">
+                        <img alt="Fake NFT" src="../assets/img/EN-Vol4-1.png" class="img-thumbnail bg-black"  width="400">
+                    </a>
+                </div>
+            </div> <!-- Vol 4 -->
+            <!-- Reference Team -->
+            <A name="Team"></A> 
+        </div> <!-- NFT Crap News-->
+        <!-- Team -->
+        <div class="container-fluid bg-light">
+            <!-- Divider -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-11">
+                    <hr class="divider divider-fade divider-dark my-4">
+                </div>
+            </div>
+            <!-- Title and introduction -->
+            <div class="row align-items-center justify-content-center px-5 py-4">
+                <h1 class="display-4 text-center text-md-left mb-3">
+                    <strong>Meet our team</strong>
+                </h1>
+                <p class="lead text-center text-md-left text-muted mb-4"></p>
+            </div>  
+            <!-- team members -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center px-5">
+                <div class="col-sm-6 col-md-4 my-2">
+                    <div class="card h-100">
+                        <div class="card-body text-center"> <img src="../assets/img/foto_pablo.jpg" class="rounded-circle" width="200" height="200">
+                            <h5 class="card-title mt-2 mb-1">Pablo Fernández-Maquieira</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
+                            <p class="mb-3 mt-3">Proactive and decisive, I always look for work. つ づ く</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a target="_blank" href="https://www.linkedin.com/in/pablofm/"><img src="../assets/img/linkedin_blue.png" height="27" alt="linkedin" class="align-text-center"></a></li>
+                                <li class="list-inline-item"><a target="_blank" href="https://twitter.com/Pablo_FMM"><img src="../assets/img/twitter_blue.svg" height="27" alt="twitter" class="align-text-center"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 my-2">
+                    <div class="card h-100">
+                        <div class="card-body text-center"> <img src="../assets/img/foto_clio.jpg" class="rounded-circle" width="200" height="200">
+                            <h5 class="card-title mt-2 mb-1">Clio Beruete</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
+                            <p class="mb-3 mt-3">Mobile and Online Journalist. Blogger. Social Media.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a target="_blank" href="https://www.linkedin.com/in/clio-beruete/"><img src="../assets/img/linkedin_blue.png" height="27" alt="linkedin" class="align-text-center"></a></li>
+                                <li class="list-inline-item"><a target="_blank" href="https://twitter.com/CBeruete"><img src="../assets/img/twitter_blue.svg" height="27" alt="twitter" class="align-text-center"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 my-2">
+                    <div class="card h-100">
+                        <div class="card-body text-center"> <img src="../assets/img/foto_iago.jpg" class="rounded-circle" width="200" height="200">
+                            <h5 class="card-title mt-2 mb-1">Iago Fernández-Cedrón</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
+                            <p class="mb-3 mt-3">Business Development, Innovation, project management, Entrepreneur. NFTs.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a target="_blank" href="https://www.linkedin.com/in/iagofcfm/"><img src="../assets/img/linkedin_blue.png" height="27" alt="linkedin" class="align-text-center"></a></li>
+                                <li class="list-inline-item"><a target="_blank" href="https://twitter.com/iagofcfm"><img src="../assets/img/twitter_blue.svg" height="27" alt="twitter" class="align-text-center"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 my-2">
+                    <div class="card h-100">
+                        <div class="card-body text-center"> <img src="../assets/img/foto_dani.jpg" class="rounded-circle" width="200" height="200">
+                            <h5 class="card-title mt-2 mb-1">Daniel Garrido</h5> <span class="fs-2 mb-3 font-weight-bold">Co-founder</span>
+                            <p class="mb-3 mt-3">Family and friends first! Blockchain and NFT lover.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a target="_blank" href="https://www.linkedin.com/in/daniel-garrido-pérez"><img src="../assets/img/linkedin_blue.png" height="27" alt="linkedin" class="align-text-center"></a></li>
+                                <li class="list-inline-item"><a target="_blank" href="https://twitter.com/xdhanny/"><img src="../assets/img/twitter_blue.svg" height="27" alt="twitter" class="align-text-center"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Team member -->
+        </div> <!-- Team -->
+        <!-- Footer -->
+        <footer class="position-relative" id="footer-main">
+            <div class="footer pt-lg-5 footer-light bg-light">
+                <!-- Footer -->
+                <div class="container pt-4">
+                    <hr class="divider divider-fade divider-dark my-4">
+                    <div class="row align-items-center justify-content-md-between pb-4">
+                        <div class="col-md-6">
+                            <div class="copyright text-sm font-weight-bold text-start text-md-left">
+                                &copy; 2021 <a href="" class="font-weight-bold" target="_blank">NFT Crap</a>. All rights reserved
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!--
+                            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="modal" data-target="#termsModal" href="">
+                                        Terms
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="modal" data-target="#privacyModal" href="">
+                                        Privacy
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="modal" data-target="#cookiesModal" href="">
+                                        Cookies
+                                    </a>
+                                </li>
+                            </ul>
+                        -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+        <!-- Terms Modal -->
+        <div class="modal fade docs-example-modal-sm" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h6 class="modal-title" id="loginModalLabel">Terms</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-sm text-white mb-3">
+                        </p>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Privacy Modal -->
+        <div class="modal fade docs-example-modal-sm" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h6 class="modal-title" id="loginModalLabel">Privacy</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-sm text-white mb-3">
+                        </p>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cookies Modal -->
+        <div class="modal fade docs-example-modal-sm" id="cookiesModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h6 class="modal-title" id="loginModalLabel">Cookies</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-sm text-white mb-3">
+                        </p>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- scripts -->
+        <script src="../assets/js/index.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript">
+            var nav = document.querySelector('nav');
+    
+            window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 100) {
+                nav.classList.add('bg-white', 'shadow');
+            } else {
+                nav.classList.remove('bg-white', 'shadow');
+            }
+            });
+        </script>
+    </body>
 </html>
