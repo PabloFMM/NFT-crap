@@ -4,13 +4,16 @@ Moralis.serverURL = "https://nq7wjctja3gs.moralis.io:2053/server";
 const appHeaderContainer = document.getElementById("app-header-btns");
 const contentContainer = document.getElementById("content");
 
-/*
-if ($("#navarCollapse").hasClass("show")) {
-  //$("nav").toggleClass("bg-light");
-  nav.classList.add('bg-white');
+// navbar 
+var nav = document.querySelector('nav');
+    
+window.addEventListener('scroll', function () {
+if (window.pageYOffset > 100) {
+    nav.classList.add('bg-white', 'shadow');
+} else {
+    nav.classList.remove('bg-white', 'shadow');
 }
-*/
-
+});
 
 // Preloader
 window.addEventListener("load", function() {

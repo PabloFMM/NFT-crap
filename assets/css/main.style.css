@@ -12,6 +12,19 @@
     background-image: -webkit-linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("../img/electrique.jpg");
 }
 
+.opacity-1{
+    opacity: 1 !important;
+}
+
+/** navbar **/
+
+.bg-white-opacity-9{
+    background-color: #ffffff !important;
+    opacity: 0.9 !important;
+    padding-bottom: 0.75rem !important;
+}
+
+
 .fw-500 {
     font-weight: 500 !important;
 }
