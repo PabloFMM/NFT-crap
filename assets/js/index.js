@@ -6,7 +6,21 @@ const contentContainer = document.getElementById("content");
 
 // navbar 
 var nav = document.querySelector('nav');
-    
+var navToggler = document.getElementById("navbartoggler");
+var navCollap = document.getElementById("navbarCollapse");
+
+window.onload = function() {
+  navToggler.onclick = changeBackground;
+}
+
+function changeBackground() {
+  if ( navCollap.classList.contains('show') ){
+    navCollap.classList.remove('bg-white-opacity-9');
+  } else{
+    navCollap.classList.add('bg-white-opacity-9');
+  }
+}
+
 window.addEventListener('scroll', function () {
 if (window.pageYOffset > 100) {
     nav.classList.add('bg-white', 'shadow');
