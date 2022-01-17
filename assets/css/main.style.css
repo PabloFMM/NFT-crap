@@ -8,8 +8,8 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("../img/electrique.jpg");
-    background-image: -webkit-linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("../img/electrique.jpg");
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("../img/electrique.jpg");
+    background-image: -webkit-linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("../img/electrique.jpg");
 }
 
 .opacity-1{
@@ -31,6 +31,10 @@
 .text-black{
     color: #000  !important;
 }
+
+.text-gray {
+    color: #463e3e !important;
+  }
 
 /***** News ****/
 
