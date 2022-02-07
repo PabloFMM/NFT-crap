@@ -12,6 +12,23 @@
     background-image: -webkit-linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("../img/electrique.jpg");
 }
 
+.bg-done {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 30px;
+  background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("../img/green-check.png");
+  background-image: -webkit-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("../img/green-check.png");
+}
+
+.bg-in-progress {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 27px;
+  background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("../img/in-progress.png");
+  background-image: -webkit-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("../img/in-progress.png");
+}
+
+
 .opacity-1{
     opacity: 1 !important;
 }
@@ -107,3 +124,4 @@ body:not(.loaded) {
 body.loaded>div.preloader {
     animation: hidePreloader .5s linear .5s forwards;
 }
+

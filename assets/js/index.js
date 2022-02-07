@@ -36,6 +36,7 @@ window.addEventListener("load", function() {
   }, 300);
 });
 
+
 // Connect Wallet
 async function logOut() {
 
@@ -413,5 +414,5 @@ function init() {
   
 }
 
-
-init();
+// Hasta que sustituyamos Moralis por otro framwrok web3
+//init();
