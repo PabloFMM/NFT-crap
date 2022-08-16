@@ -1,6 +1,7 @@
+/*
 Moralis.initialize("tL4gJwpklV87USM4wrMUC9cIaVd9d4p7nZtPC02z"); // APP ID
 Moralis.serverURL = "https://nq7wjctja3gs.moralis.io:2053/server";
-
+*/
 const appHeaderContainer = document.getElementById("app-header-btns");
 const contentContainer = document.getElementById("content");
 
@@ -37,6 +38,7 @@ window.addEventListener("load", function() {
 });
 
 
+/*
 // Connect Wallet
 async function logOut() {
 
@@ -416,3 +418,6 @@ function init() {
 
 // Hasta que sustituyamos Moralis por otro framwrok web3
 //init();
+
+
+*/
