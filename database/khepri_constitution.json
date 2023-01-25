@@ -1,0 +1,6 @@
+{
+    "Morphology": "the physical form of the Khepri, which determines its denomination within the species. It is its essential profile", 
+    "Armor": "measures the hardness of the Khepri's thorax. It ranges from 8 to 18 points", 
+    "Weight": "gravitational force of the Khepri, measured in a range of 8 to 18, whose score is equivalent to a number of kilograms", 
+    "Size": "Khepri volume, measured in a range of 8 to 18, whose score is equivalent to a number of centimeters"
+}
