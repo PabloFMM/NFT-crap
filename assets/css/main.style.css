@@ -78,6 +78,39 @@
     background-color: transparent !important;
   }
 
+  .btn-gray {
+    color: #fff !important;
+    background-color: #463e3e !important;
+    border-color: #463e3e !important;
+  }
+  .btn-gray:hover {
+
+    color: #463e3e !important;
+    background-color: transparent !important;
+    border-color: #463e3e !important;
+    box-shadow: 0 0 0 0.25rem rgba(66, 57, 58, 0.9) !important;
+  }
+  .btn-check:focus + .btn-gray, .btn-gray:focus {
+    color: #463e3e !important;
+    background-color: transparent !important;
+    border-color: #463e3e !important;
+    box-shadow: 0 0 0 0.25rem rgba(66, 57, 58, 0.9) !important;
+  }
+  .btn-check:checked + .btn-gray, .btn-check:active + .btn-gray, .btn-gray:active, .btn-gray.active, .show > .btn-gray.dropdown-toggle {
+    color: #463e3e !important;
+    background-color: transparent !important;
+    border-color: #463e3e !important;
+    box-shadow: 0 0 0 0.25rem rgba(66, 57, 58, 0.9) !important;
+  }
+  .btn-check:checked + .btn-gray:focus, .btn-check:active + .btn-gray:focus, .btn-gray:active:focus, .btn-gray.active:focus, .show > .btn-gray.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(66, 57, 58, 0.9) !important;
+  }
+  .btn-gray:disabled, .btn-gray.disabled {
+    color: #fff !important;
+    background-color: #463e3e !important;
+    border-color: #463e3e !important;
+  }
+
 /***** News ****/
 
 .bg-black {
