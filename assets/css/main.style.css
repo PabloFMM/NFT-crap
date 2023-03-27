@@ -154,10 +154,11 @@ body:not(.loaded) {
     overflow: hidden;
 }
 
+/*
 body.loaded>div.preloader {
     animation: hidePreloader .5s linear .5s forwards;
 }
-
+*/
 .meta-link {
   color: #463e3e;
   font-weight: 400 !important;
