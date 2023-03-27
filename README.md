@@ -12,3 +12,5 @@ NFT-Crap is a project that aims to educate and promote the adoption of web3 thro
 - Clonar repositorio en Visual Studio Code
     * View \ Command Palette \ Git: Clone \ Pegar URL repositorio Github
     * Prueba Dani
+    hola
+    
