@@ -31,6 +31,7 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-WHG84JV');</script>
 
+
         <!-- Favicon -->
         <link rel="icon" href="../assets/img/logo-beeple-1.png" type="image/png">
         <!-- CSS -->
@@ -46,6 +47,7 @@
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHG84JV"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-togglable fixed-top navbar-light"> <!-- bg-white shadow-->
@@ -125,17 +127,36 @@
             <div class="row justify-content-center align-items-center opacity-1">
             </div>
             <div class="row justify-content-center align-items-center">
-                <div class="col-10 my-5">
+                <div class="col-12 my-5">
 
-                    <iframe
-                    class="overflow-scroll"
-                    src="https://gateway.ipfscdn.io/ipfs/QmQpHkDDWGJPBHFKkpX1DsfzvwZXQYNVoaW4R1Lhenp6T5/bundledrop.html?contract=0x82237B50Ef5Fe10Eb82aAe0672326703898f75ac&chainId=137&tokenId=0"
-                    width="700px"
-                    height="450px"
-                    style="max-width:100%; margin-top: 100px;"
-                    frameborder="0"
-                    scrolling="yes"
-                    ></iframe>
+
+
+                    <!--
+                    <form id="myForm">
+                        <label for="respuesta1">Pregunta 1:</label>
+                        <input type="text" id="respuesta1" name="respuesta1"><br><br>
+                        <label for="respuesta2">Pregunta 2:</label>
+                        <input type="text" id="respuesta2" name="respuesta2"><br><br>
+                        <button type="submit">Enviar</button>
+                      </form>
+                    -->
+                    
+                    <form id="myForm" class="row align-items-center">
+                        <div id="mensajeError" class="col-10 alert alert-danger" style="display:none;">
+                            <strong>¡Error!</strong> Respuesta incorrecta. Por favor, inténtalo de nuevo.
+                        </div>
+                        <div class="col-10 form-floating mb-3">
+                            <input type="text" class="form-control" id="respuesta1" placeholder="Pregunta 1">
+                            <label for="quest1">Pregunta 1</label>
+                        </div>
+                        <div class="col-10 form-floating mb-3">
+                            <input type="text" class="form-control" id="respuesta2" placeholder="Pregunta 2">
+                            <label for="quest2">Pregunta 2</label>
+                        </div>
+                        <div class="col-10">
+                            <button type="submit" class="btn btn-gray">Enviar</button>
+                        </div>
+                    </form>
 
                 </div>
             </div>
@@ -184,8 +205,8 @@
             <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h1 class="modal-title" id="loginModalLabel">Terms and Conditions</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h1 class="modal-title" id="loginModalLabel">Terms and Conditions</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-gray">
                     </div>
@@ -197,7 +218,9 @@
         <!-- scripts -->
         <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/index.js"></script>
+        <script src="../assets/js/forms.js"></script>
         <script src="../assets/js/bootstrap.bundle.min.js"></script>
         <script src="../assets/js/cookiealert.js"></script>
+
     </body>
 </html>

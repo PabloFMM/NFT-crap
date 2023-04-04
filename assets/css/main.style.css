@@ -164,3 +164,7 @@ body.loaded>div.preloader {
   font-weight: 400 !important;
   text-decoration: none;
 }
+
+#mensajeError {
+  display: none;
+}

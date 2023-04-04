@@ -7,7 +7,7 @@ var nav = document.querySelector('nav');
 var navToggler = document.getElementById("navbartoggler");
 var navCollap = document.getElementById("navbarCollapse");
 
-
+//change navbar background color from trasparent to white
 window.onload = function() {
   navToggler.onclick = changeBackground;
 }
@@ -37,4 +37,13 @@ window.addEventListener("load", function() {
   }, 500);
 });
 
+// load terms anc conditions template
+$(document).ready(function() {
+  $('#termsModal').on('show.bs.modal', function() {
+      $(this).find('.modal-body').load('../templates/terms.html');
+  });
 
+  $('#termsModalEN').on('show.bs.modal', function() {
+    $(this).find('.modal-body').load('templates/terms.html');
+});
+});
